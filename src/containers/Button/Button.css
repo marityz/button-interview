@@ -1,0 +1,23 @@
+
+.button {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 0;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #FF2B2B;
+}
+
+.button_on {
+    background-color: #0BDA51;
+}
+
+.button:active, .button:focus {
+    outline: none;
+}
+
+.button::-moz-focus-inner {
+    border: 0;
+}
