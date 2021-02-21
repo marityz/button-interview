@@ -1,4 +1,3 @@
-
 const initialState = {
     type: 'initialState',
     buttonState: false,

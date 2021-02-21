@@ -1,32 +1,18 @@
 import './App.css';
 import Button from "./containers/Button/Button";
 import {connect} from 'react-redux';
-import {bindActionCreators} from "redux";
-import onClickStateButton from '../src/store/actions/actions'
-
-const mapStateToProps = (state) => {
-    return {
-        buttonState: state.buttonState,
-    }
-};
-
-const saveDispatchToProps = (dispatch) => {
-    return {
-        setButtonState: bindActionCreators(onClickStateButton, dispatch)
-    }
-
-};
-
-
+import {mapStateToProps, saveDispatchToProps} from "./store/store";
+import { socket_init } from './socket-api/socket-api.js';
 const WrappedButton = connect(mapStateToProps, saveDispatchToProps)(Button);
 
 function App() {
     return (
         <div className='app'>
-                <WrappedButton/>
+            <WrappedButton />
         </div>
     )
 }
 
 export default App;
 
+socket_init();

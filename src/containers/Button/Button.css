@@ -1,5 +1,5 @@
 
-.button{
+.button {
     position: relative;
     width: 150px;
     height: 150px;
@@ -10,12 +10,14 @@
     background-color: #FF2B2B;
 }
 
-.button_on{
+.button_on {
     background-color: #0BDA51;
 }
+
 .button:active, .button:focus {
     outline: none;
 }
+
 .button::-moz-focus-inner {
     border: 0;
 }
