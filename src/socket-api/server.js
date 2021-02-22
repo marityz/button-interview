@@ -1,21 +1,26 @@
 const http = require("http");
 const express = require('express');
 const app = express();
-const server = http.createServer(app);
 
-const io = require('socket.io')(server, {
-    cors: {
-        origin: "http://localhost:3000",
-        credentials: true
-    }
-});
 
 const port = 8000;
 
 
+const server = http.createServer(app).listen(port, "0.0.0.0");
+
+const io = require('socket.io')(server, {
+    cors: {
+        origin:'*',
+        credentials: true
+    }
+});
+
+
+
+
+
 let state = false;
 
-io.listen(port);
 console.log('listening on port ', port);
 
 
@@ -30,7 +35,7 @@ io.on('connection', (client) => {
 
     client.emit('getStateButton', state);
 
-    client.on('disconnect', () => {
+    client.on('disconnect', ()=>{
         console.log("disconnect")
     })
 });

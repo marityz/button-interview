@@ -18,6 +18,6 @@
       npm run start
       
       
-
+  [Сылка на проект после запуска](http://localhost:3000/)
 
 #### С использование React.js и Redux,  Socket.io
