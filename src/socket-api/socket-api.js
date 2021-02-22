@@ -1,8 +1,15 @@
 import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:8000');
+
+function addHref() {
+    const href = document.location.href;
+    return href.slice(0, -5) + '8000';
+
+}
+
+const socket = openSocket(addHref());
 
 export default socket;
 
-export function socket_init(){
+export function socket_init() {
     console.log('connected to socket')
 }
